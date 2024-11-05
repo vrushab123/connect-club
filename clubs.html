@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <title>AI Domain Clubs</title>
+    <style>
+        .club-details {
+            transition: max-height 0.5s ease;
+            overflow: hidden;
+            max-height: 0;
+            /* Initially hidden */
+        }
+
+        .club-details.show {
+            max-height: 500px;
+            /* Adjust this value to your content's height */
+        }
+
+        .details-container {
+            transition: transform 0.5s ease;
+            transform: scale(0);
+            opacity: 0;
+        }
+
+        .details-container.show {
+            transform: scale(1);
+            opacity: 1;
+        }
+
+        .sections {
+            height: 60rem;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-100">
+    <!-- Navbar -->
+    <nav class="bg-white shadow-md">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-blue-600">ConnectCampus</a>
+            <div class="hidden md:flex space-x-6">
+                <a href="#" class="text-gray-800 hover:text-blue-600">Home</a>
+                <a href="#about" class="text-gray-800 hover:text-blue-600">About</a>
+                <!-- <a href="#" class="text-gray-800 hover:text-blue-600">Contact</a> -->
+            </div>
+            <button class="md:hidden text-gray-800 focus:outline-none">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Domains Section -->
+    <section class="bg-blue-600 py-16 px-4 sm:px-8 md:px-16 lg:px-32 sections" id="domains">
+        <div class="max-w-7xl mx-auto text-center">
+            <h2 class="text-3xl sm:text-4xl font-bold text-white mb-8">Select Your Domains</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+                <!-- Domain Card -->
+                <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
+                    <h3 class="text-blue-600 text-2xl font-semibold mb-2">🤖 Artificial Intelligence</h3>
+                    <p class="text-black">Dive into the world of AI with projects and challenges designed to enhance
+                        your understanding of machine learning.</p>
+                    <button onclick="window.location.href='aidomain.html'"
+                        class="bg-blue-600 text-white mt-6 px-6 py-3 rounded-lg font-semibold hover:bg-gray-200">Get
+                        Started</button>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
+                    <h3 class="text-blue-600 text-2xl font-semibold mb-2">📊 Machine Learning</h3>
+                    <p class="text-black">Master the essentials of ML with hands-on tasks covering algorithms, data
+                        preprocessing, and model deployment.</p>
+                    <button onclick="window.location.href='mldomain.html'"
+                        class="bg-blue-600 text-white mt-6 px-6 py-3 rounded-lg font-semibold hover:bg-gray-200">Get
+                        Started</button>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
+                    <h3 class="text-blue-600 text-2xl font-semibold mb-2">🌐 Web Development</h3>
+                    <p class="text-black">Build and deploy real-world web applications, exploring frontend and
+                        backend technologies.</p>
+                    <button onclick="window.location.href='webdev.html'"
+                        class="bg-blue-600 text-white mt-6 px-6 py-3 rounded-lg font-semibold hover:bg-gray-200">Get
+                        Started</button>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
+                    <h3 class="text-blue-600 text-2xl font-semibold mb-2">🛡️ Cybersecurity</h3>
+                    <p class="text-black">Challenge your skills in security with capture-the-flag tasks, ethical
+                        hacking, and encryption techniques.</p>
+                    <button onclick="window.location.href='cyberSecurity.html'"
+                        class="bg-blue-600 text-white mt-6 px-6 py-3 rounded-lg font-semibold hover:bg-gray-200">Get
+                        Started</button>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
+                    <h3 class="text-blue-600 text-2xl font-semibold mb-2">📈 Data Science</h3>
+                    <p class="text-black">Work with real datasets, practice data cleaning, visualization, and
+                        predictive modeling.</p>
+                    <button onclick="window.location.href='datascience.html'"
+                        class="bg-blue-600 text-white mt-6 px-6 py-3 rounded-lg font-semibold hover:bg-gray-200">Get
+                        Started</button>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
+                    <h3 class="text-blue-600 text-2xl font-semibold mb-2">🎭 Dance and Performing Arts</h3>
+                    <p class="text-black">Showcase your talent with competitions, choreography challenges, and
+                        creative performances.</p>
+                    <button onclick="window.location.href='dance.html'"
+                        class="bg-blue-600 text-white mt-7 px-6 py-3 rounded-lg font-semibold hover:bg-gray-200">Get
+                        Started</button>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- Footer Section -->
+    <footer class="bg-white text-blue-600 py-4">
+        <div class="container mx-auto text-center">
+            <p class="mb-2">&copy; 2024 ConnectCampus. All rights reserved.</p>
+            <div class="flex justify-center space-x-4">
+                <a href="#" class="hover:underline">Privacy Policy</a>
+                <span>|</span>
+                <a href="#" class="hover:underline">Terms of Service</a>
+                <span>|</span>
+                <a href="#" class="hover:underline">Contact Us</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
